@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Post — DualView UX Demo</title>
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="lowvision.css" />
+</head>
+<body class="demo-bad">
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">DualView UX</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="low-vision.html" aria-current="page">Low Vision</a></li>
+        <li><a href="blind.html">Blind</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mode bar — sticky below navbar -->
+  <div class="a11y-mode-bar" role="region" aria-label="Accessibility mode selector">
+    <span class="mode-label">Mode:</span>
+    <div class="mode-pill" role="group" aria-label="Select accessibility mode">
+      <button id="mode-bad"  aria-pressed="true"  class="active">Inaccessible</button>
+      <button id="mode-good" aria-pressed="false">Accessible</button>
+    </div>
+  </div>
+
+  <!-- Category tabs — sticky below mode bar -->
+  <nav class="cat-tabs-bar" aria-label="Article categories">
+    <ul class="cat-tabs" role="tablist">
+      <li role="presentation">
+        <button class="cat-tab-btn active" role="tab" aria-selected="true"
+                data-cat="local" aria-controls="article-panel">
+          Local News
+        </button>
+      </li>
+      <li role="presentation">
+        <button class="cat-tab-btn" role="tab" aria-selected="false"
+                data-cat="politics" aria-controls="article-panel">
+          Politics
+        </button>
+      </li>
+      <li role="presentation">
+        <button class="cat-tab-btn" role="tab" aria-selected="false"
+                data-cat="education" aria-controls="article-panel">
+          Education
+        </button>
+      </li>
+      <li role="presentation">
+        <button class="cat-tab-btn" role="tab" aria-selected="false"
+                data-cat="health" aria-controls="article-panel">
+          Health
+        </button>
+      </li>
+      <li role="presentation">
+        <button class="cat-tab-btn" role="tab" aria-selected="false"
+                data-cat="technology" aria-controls="article-panel">
+          Technology
+        </button>
+      </li>
+      <li role="presentation">
+        <button class="cat-tab-btn" role="tab" aria-selected="false"
+                data-cat="culture" aria-controls="article-panel">
+          Culture
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <div class="lv-page">
+
+      <header class="masthead" role="banner" aria-label="Publication header">
+        <h1 class="masthead-title">The Daily Post</h1>
+        <p class="masthead-meta"><time datetime="2025-04-26">Sunday, 26 April 2025</time></p>
+      </header>
+
+      <div class="content-grid">
+
+        <!-- MAIN ARTICLE — content swapped by JS based on active tab -->
+        <article class="main-article" id="article-panel" aria-live="polite" role="tabpanel">
+
+          <!-- content injected by lowvision.js -->
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Advertisement">
+          <div class="sidebar-ad">
+            <span class="sidebar-ad-label" aria-hidden="true">Advertisement</span>
+            <img
+              class="sidebar-ad-img"
+              src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=300&q=80"
+              alt="Advertisement: Sri Venkateswara Ayurveda Clinic — Traditional treatments for modern wellness, Vijayawada"
+              width="300" height="380"
+            />
+            <p class="sidebar-ad-caption">
+              Sri Venkateswara Ayurveda Clinic, Vijayawada — Traditional treatments for
+              modern wellness. Call 0866-123456.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ACCESSIBILITY TOOLBAR -->
+  <aside class="a11y-toolbar" aria-label="Accessibility controls">
+    <button class="a11y-tab-btn" id="tab-btn"
+            aria-expanded="false" aria-controls="a11y-panel"
+            aria-label="Open accessibility controls">
+      ♿ Controls
+    </button>
+    <div class="a11y-panel" id="a11y-panel" role="dialog"
+         aria-label="Accessibility controls panel" aria-modal="false">
+      <div class="panel-header">
+        <h2>Accessibility</h2>
+        <button class="panel-close" id="panel-close" aria-label="Close panel">✕</button>
+      </div>
+      <div class="panel-body">
+
+        <div class="panel-group">
+          <h3>Font Size</h3>
+          <div class="ctrl-group" role="group" aria-label="Font size">
+            <button id="fs-sm"  aria-pressed="false">A−</button>
+            <button id="fs-md"  aria-pressed="true" class="active">A</button>
+            <button id="fs-lg"  aria-pressed="false">A+</button>
+          </div>
+        </div>
+
+        <div class="panel-group">
+          <h3>Line Spacing</h3>
+          <div class="ctrl-group" role="group" aria-label="Line spacing">
+            <button id="sp-normal" aria-pressed="true" class="active">Normal</button>
+            <button id="sp-wide"   aria-pressed="false">Wide</button>
+            <button id="sp-wider"  aria-pressed="false">Wider</button>
+          </div>
+        </div>
+
+        <div class="panel-group">
+          <h3>Colour</h3>
+          <div class="toggle-row">
+            <span class="toggle-label">High Contrast</span>
+            <label class="sm-toggle" aria-label="Toggle high contrast mode">
+              <input type="checkbox" id="tog-contrast" /><span class="sm-slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Dark Mode</span>
+            <label class="sm-toggle" aria-label="Toggle dark mode">
+              <input type="checkbox" id="tog-dark" /><span class="sm-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel-group">
+          <h3>Links</h3>
+          <div class="toggle-row">
+            <span class="toggle-label">Highlight Links</span>
+            <label class="sm-toggle" aria-label="Toggle link highlighting">
+              <input type="checkbox" id="tog-links" /><span class="sm-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel-group">
+          <h3>Screen Reader Output</h3>
+          <div class="toggle-row">
+            <span class="toggle-label">Show Image Descriptions</span>
+            <label class="sm-toggle" aria-label="Toggle screen reader image descriptions">
+              <input type="checkbox" id="tog-alttext" /><span class="sm-slider"></span>
+            </label>
+          </div>
+          <p style="font-size:0.7rem;color:var(--muted);margin-top:0.35rem;line-height:1.5;">
+            Hover over the article image when enabled to see the screen reader description.
+          </p>
+        </div>
+
+      </div>
+      <button class="panel-reset" id="panel-reset">↺ Reset All</button>
+    </div>
+  </aside>
+
+  <script src="global.js"></script>
+  <script src="lowvision.js"></script>
+</body>
+</html>

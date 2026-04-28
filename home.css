@@ -1,0 +1,283 @@
+/* ============================================================
+   HOME.CSS — DualView UX Index Page
+   ============================================================ */
+
+/* ---- HERO ---- */
+.home-hero {
+  border-bottom: 1px solid var(--border);
+  background: var(--accent);
+}
+
+.home-hero .hero-eyebrow,
+.home-hero h1,
+.home-hero .hero-tagline,
+.home-hero .hero-desc,
+.home-hero .hero-cta-hint {
+  color: #fff;
+}
+
+.home-hero .hero-eyebrow { opacity: 0.8; }
+.home-hero .hero-tagline  { opacity: 0.9; }
+.home-hero .hero-desc     { opacity: 0.85; }
+.home-hero .hero-cta-hint { opacity: 0.75; }
+
+.home-hero .hero-arrow { color: rgba(255,255,255,0.7); }
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3.5rem;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.hero-inner h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-cta-hint {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.hero-arrow {
+  font-size: 1.4rem;
+  color: var(--accent);
+  animation: bob 1.6s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ---- PERSONAS ---- */
+.personas {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.persona-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pcard-top {
+  padding: 1.75rem 1.75rem 1.25rem;
+}
+
+.ptag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+}
+
+.ptag-lv    { background: #fff3e0; color: #b45309; }
+.ptag-blind { background: #e8f0fe; color: #1d3f7a; }
+
+.persona-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.pbio {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.pcard-problems {
+  padding: 1rem 1.75rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.problems-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.persona-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.persona-card ul li {
+  font-size: 0.84rem;
+  color: var(--text);
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.persona-card ul li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 0.75rem;
+  top: 0.1rem;
+}
+
+.pcard-bottom {
+  padding: 1.25rem 1.75rem 1.75rem;
+}
+
+.pcard-needs {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.pcard-btn { width: 100%; text-align: center; }
+
+/* Left border accent */
+.pcard-lv   { border-left: 4px solid #f59e0b; }
+.pcard-blind { border-left: 4px solid #1d3f7a; }
+
+/* ---- ABOUT / ACCORDION ---- */
+.about-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 2rem 4rem;
+}
+
+.about-section h2 {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.accordion-item { border-bottom: 1px solid var(--border); }
+.accordion-item:last-child { border-bottom: none; }
+
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: none;
+  padding: 1rem 1.25rem;
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+
+.accordion-btn:hover { background: var(--bg); }
+
+.acc-icon {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.accordion-btn[aria-expanded="true"] .acc-icon {
+  transform: rotate(45deg);
+}
+
+/* Smooth accordion open/close */
+.accordion-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease, padding 0.25s ease;
+  padding: 0 1.25rem;
+  background: var(--surface);
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.accordion-body.open {
+  max-height: 400px;
+  padding: 0 1.25rem 1rem;
+}
+
+.accordion-body ul {
+  padding-left: 1.1rem;
+  margin-top: 0.3rem;
+}
+
+.accordion-body ul li { margin-bottom: 0.3rem; }
+.accordion-body p + p { margin-top: 0.5rem; }
+
+@media (max-width: 680px) {
+  .persona-grid { grid-template-columns: 1fr; }
+}
