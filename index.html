@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DualView UX — Two perspectives. One experience.</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">DualView UX</a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="low-vision.html">Low Vision</a></li>
+        <li><a href="blind.html">Blind</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="home-hero" aria-labelledby="hero-h">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">DTI Project — Accessibility Demo</p>
+        <h1 id="hero-h">DualView UX</h1>
+        <p class="hero-tagline">"Two perspectives. One experience."</p>
+        <p class="hero-desc">
+          Explore how users with low vision and blindness interact with interfaces — and
+          why inclusive design matters for both groups differently.
+        </p>
+        <p class="hero-cta-hint">Choose a user type to explore their experience</p>
+        <div class="hero-arrow" aria-hidden="true">&#8595;</div>
+      </div>
+    </section>
+
+    <!-- PERSONA CARDS -->
+    <section class="personas" id="personas" aria-labelledby="personas-h">
+      <h2 id="personas-h" class="sr-only">User Perspectives</h2>
+
+      <div class="persona-grid">
+
+        <!-- LOW VISION -->
+        <article class="persona-card pcard-lv" aria-labelledby="lv-h">
+          <div class="pcard-top">
+            <span class="ptag ptag-lv">Low Vision</span>
+            <h3 id="lv-h">Meera, 52</h3>
+            <p class="pbio">
+              Retired teacher from Kochi with diabetic retinopathy. Uses a laptop
+              with browser zoom but layouts break at higher levels.
+            </p>
+          </div>
+          <div class="pcard-problems">
+            <p class="problems-label">Common barriers:</p>
+            <ul>
+              <li>Low-contrast text is nearly unreadable</li>
+              <li>Small fonts cause strain; zooming breaks layout</li>
+              <li>Links look identical to surrounding text</li>
+            </ul>
+          </div>
+          <div class="pcard-bottom">
+            <p class="pcard-needs">Needs: <strong>visual adjustments</strong> — contrast, larger text, and improved spacing</p>
+            <a href="low-vision.html" class="btn btn-primary pcard-btn">View Low Vision Demo</a>
+          </div>
+        </article>
+
+        <!-- BLIND USER -->
+        <article class="persona-card pcard-blind" aria-labelledby="blind-h">
+          <div class="pcard-top">
+            <span class="ptag ptag-blind">Blind User</span>
+            <h3 id="blind-h">Arjun, 27</h3>
+            <p class="pbio">
+              Software tester from Hyderabad with congenital blindness. Uses NVDA
+              screen reader and keyboard-only navigation for every online task.
+            </p>
+          </div>
+          <div class="pcard-problems">
+            <p class="problems-label">Common barriers:</p>
+            <ul>
+              <li>Images without alt text are announced as noise</li>
+              <li>No heading structure means no navigable outline</li>
+              <li>Missing skip link forces tabbing through every nav item</li>
+            </ul>
+          </div>
+          <div class="pcard-bottom">
+            <p class="pcard-needs">Needs: <strong>structural accessibility</strong> — alt text, headings, keyboard nav</p>
+            <a href="blind.html" class="btn btn-primary pcard-btn">View Blind Demo</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ACCORDION -->
+    <section class="about-section" id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About DualView UX</h2>
+
+      <div class="accordion" role="list">
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-1">
+            <span>What this demo shows</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-1">
+            <p>DualView UX demonstrates how the same interface can feel radically different depending on the type of visual impairment a user has. Each demo page starts in an inaccessible state and can be progressively improved using the controls panel.</p>
+            <p style="margin-top:0.6rem;">The key insight: accessibility is not one-size-fits-all. A blind user needs structural changes (alt text, semantic HTML, keyboard navigation). A low vision user needs visual changes (contrast, font size, spacing). Both matter.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-2">
+            <span>Why accessibility matters</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-2">
+            <ul>
+              <li>246 million people globally live with moderate to severe vision impairment</li>
+              <li>96.3% of home pages fail at least one WCAG accessibility check (WebAIM 2023)</li>
+              <li>1 in 12 men has some form of colour vision deficiency</li>
+              <li>Inaccessible interfaces exclude users from banking, healthcare, education, and commerce</li>
+              <li>Accessibility improvements benefit all users — not just those with disabilities</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-3">
+            <span>WCAG principles demonstrated</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-3">
+            <ul>
+              <li><strong>Contrast:</strong> Minimum 4.5:1 ratio for body text (WCAG AA)</li>
+              <li><strong>Text scaling:</strong> Content must remain usable at 200% zoom</li>
+              <li><strong>Keyboard navigation:</strong> All functionality available without a mouse</li>
+              <li><strong>Alt text:</strong> Every meaningful image must have a text alternative</li>
+              <li><strong>Semantic HTML:</strong> Correct heading hierarchy, landmarks, and labels</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-4">
+            <span>How to use the demo</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-4">
+            <ul>
+              <li>Click a persona card above to open the relevant demo page</li>
+              <li>Each demo starts in inaccessible mode — observe the default state</li>
+              <li>Open the Accessibility panel (right side of screen) to toggle features</li>
+              <li>Switch between Inaccessible and Accessible mode using the panel controls</li>
+              <li>On the Blind demo: press Tab to explore keyboard navigation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-5">
+            <span>Why can't one solution work for everyone?</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-5">
+            <p>Low vision and blindness are fundamentally different conditions. A person with low vision can see — but poorly. They benefit from larger text, better contrast, and clearer visual hierarchy. A blind user cannot rely on visuals at all. They navigate using a screen reader and keyboard, and need the underlying HTML to be correct — headings, labels, alt text, landmarks.</p>
+            <p style="margin-top:0.5rem;">A website that adds high contrast solves nothing for a blind user. A website that adds alt text solves nothing for a low vision user who can see the image but cannot read a small caption. Both groups need different interventions.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-6">
+            <span>What happens when accessibility is ignored?</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-6">
+            <ul>
+              <li>Blind users hear "button, button, button" with no context about what each button does</li>
+              <li>Low vision users zoom to 200% and the layout collapses, overlapping or hiding content</li>
+              <li>Images are announced as "image" with no description — useless to a screen reader</li>
+              <li>Forms become impossible — inputs have no labels, so the screen reader says "edit text, blank"</li>
+              <li>Users cannot navigate by headings because the page uses styled divs instead of semantic HTML</li>
+              <li>The result: users abandon the task and lose independence</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-7">
+            <span>What does accessible mode actually change?</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-7">
+            <p>On the Low Vision demo, accessible mode restores proper text contrast, increases font size, widens line spacing, and makes links visually distinct. These are CSS-level changes — no content rewriting needed.</p>
+            <p style="margin-top:0.5rem;">On the Blind demo, it swaps vague alt text ("image") for descriptive alternatives, and changes button labels from "View product" to "View: [Product Name]" — so a screen reader user always knows what they are about to activate.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-8">
+            <span>What are the limitations of this demo?</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" id="acc-8">
+            <ul>
+              <li>Based on secondary research and simulated personas — no formal user testing was conducted</li>
+              <li>The "inaccessible" mode uses CSS to simulate poor design; the underlying HTML stays structurally valid</li>
+              <li>Real screen reader behaviour varies by software (NVDA, JAWS, VoiceOver) and cannot be fully replicated in a browser</li>
+              <li>The screen reader overlay shows the alt attribute content — not a full audio output simulation</li>
+              <li>Keyboard navigation is demonstrated structurally but not exhaustively tested with assistive hardware</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/global.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
+</html>
